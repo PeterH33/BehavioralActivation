@@ -9,7 +9,11 @@ import SwiftUI
 
 struct PickActivityView: View {
     var body: some View {
-        Text("Pick Activity View")
+        Button{
+            _ = 1
+        } label: {
+            Text("Pick an Activity")
+        }
     }
 }
 

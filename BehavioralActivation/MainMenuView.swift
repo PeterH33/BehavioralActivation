@@ -16,10 +16,10 @@ struct MainMenuView: View {
                     Text("Pick Activity")
                         .accessibilityIdentifier("pickActivityNav")
                 }
-            Text("Create Activity View")
+            CreateActivityView()
                 .tabItem {
                     Image(systemName: "plus.app")
-                    Text("create Activity")
+                    Text("Create Activity")
                         .accessibilityIdentifier("createActivityNav")
                 }
         }
