@@ -24,16 +24,11 @@ final class BehavioralActivationUITests: XCTestCase {
     }
 
     func testNavigationMenuExists(){
-        let pickActivity = app.staticTexts["Pick Activity"]
-        XCTAssert(pickActivity.exists)
+        let pickActivityNavButton = app.buttons["pickActivityNav"]
+        XCTAssert(pickActivityNavButton.exists)
+        let createActivityNavButton = app.buttons["createActivityNav"]
+        XCTAssert(createActivityNavButton.exists)
     }
-//    func testTextPresent() throws{
-//        let bob = app.staticTexts["bob"]
-//        XCTAssert((bob.exists))
-//    }
-//    
-//    func testAddButton() throws{
-//        let addbutton = app.buttons["addButton"]
-//        XCTAssert(addbutton.exists)
-//    }
+    
+
 }
