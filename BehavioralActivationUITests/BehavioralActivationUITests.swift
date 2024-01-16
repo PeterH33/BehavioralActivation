@@ -45,7 +45,9 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssert(createActivityText.exists)
         XCTAssertFalse(pickActivityButton.exists)
         
-        
+        createActivityButton.tap()
+        let activityNameTextField = app.textFields["activityNameTextField"]
+        XCTAssert(activityNameTextField.exists)
         
         pickActivityNavButton.tap()
         XCTAssertFalse(createActivityText.exists)

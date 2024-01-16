@@ -12,14 +12,14 @@ struct MainMenuView: View {
         TabView{
             PickActivityView()
                 .tabItem {
-                    Image(systemName: "list.bullet.clipboard")
+                    Image(systemName: "person.and.arrow.left.and.arrow.right")
                     Text("Pick Activity")
                         .accessibilityIdentifier("pickActivityNav")
                 }
-            CreateActivityView()
+            ActivityListView()
                 .tabItem {
-                    Image(systemName: "plus.app")
-                    Text("Create Activity")
+                    Image(systemName: "list.bullet.clipboard")
+                    Text("Activity List")
                         .accessibilityIdentifier("createActivityNav")
                 }
         }

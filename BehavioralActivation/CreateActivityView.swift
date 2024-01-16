@@ -1,6 +1,6 @@
 //
 //  CreateActivityView.swift
-//  BehavioralActivationUITests
+//  BehavioralActivation
 //
 //  Created by Peter Hartnett on 1/16/24.
 //
@@ -8,20 +8,10 @@
 import SwiftUI
 
 struct CreateActivityView: View {
+    @State private var name:String = ""
     var body: some View {
-        NavigationStack{
-            Text("Create Activity View")
-                .toolbar{
-                    ToolbarItem{
-                        Button{
-                            _ = 1
-                        } label: {
-                            Image(systemName: "plus")
-                                .accessibilityLabel("createActivityButton")
-                        }
-                    }
-                }
-        }
+        TextField("Name", text: $name)
+            .accessibilityLabel("activityNameTextField")
     }
 }
 
