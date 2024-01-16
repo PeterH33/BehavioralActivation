@@ -13,6 +13,7 @@ struct PickActivityView: View {
             _ = 1
         } label: {
             Text("Pick an Activity")
+                .accessibilityLabel("pickActivityButton")
         }
     }
 }

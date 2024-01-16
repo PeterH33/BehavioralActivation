@@ -25,7 +25,7 @@ final class BehavioralActivationUITests: XCTestCase {
 
     ///This test is simply to make sure that navigation is working properly
     func testNavigationMenu(){
-        let pickActivityButton = app.buttons["Pick an Activity"]
+        let pickActivityButton = app.buttons["pickActivityButton"]
         XCTAssert(pickActivityButton.exists)
         
         let createActivityText = app.staticTexts["Create Activity View"]
@@ -44,6 +44,8 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssert(createActivityButton.exists)
         XCTAssert(createActivityText.exists)
         XCTAssertFalse(pickActivityButton.exists)
+        
+        
         
         pickActivityNavButton.tap()
         XCTAssertFalse(createActivityText.exists)
