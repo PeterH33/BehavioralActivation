@@ -36,18 +36,30 @@ final class BehavioralActivationUITests: XCTestCase {
         let pickActivityNavButton = app.buttons["pickActivityNav"]
         XCTAssert(pickActivityNavButton.exists)
         
-        let createActivityNavButton = app.buttons["createActivityNav"]
-        XCTAssert(createActivityNavButton.exists)
+        let activityListNavButton = app.buttons["createActivityNav"]
+        XCTAssert(activityListNavButton.exists)
         
-        createActivityNavButton.tap()
-        
+        //Navigate to the activity list
+        activityListNavButton.tap()
         XCTAssert(createActivityButton.exists)
         XCTAssert(createActivityText.exists)
         XCTAssertFalse(pickActivityButton.exists)
         
+        //navigate to the create Activity view from the Activity list view
         createActivityButton.tap()
         let activityNameTextField = app.textFields["activityNameTextField"]
         XCTAssert(activityNameTextField.exists)
+        let activityDetailTextField = app.textFields["activityDetailsTextField"]
+        XCTAssert(activityDetailTextField.exists)
+        
+        //test adding information
+        activityNameTextField.tap()
+        activityNameTextField.typeText("Test Name")
+        XCTAssertEqual(activityNameTextField.value as! String, "Test Name")
+        activityDetailTextField.tap()
+        activityDetailTextField.typeText("Test Details")
+        XCTAssertEqual(activityDetailTextField.value as! String, "Test Details")
+        app.keyboards.buttons["Return"].tap()
         
         pickActivityNavButton.tap()
         XCTAssertFalse(createActivityText.exists)

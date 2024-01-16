@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct CreateActivityView: View {
-    @State private var name:String = ""
+    @State private var name: String = ""
+    @State private var details: String = ""
+    
     var body: some View {
-        TextField("Name", text: $name)
-            .accessibilityLabel("activityNameTextField")
+        VStack{
+            TextField("Name", text: $name)
+                .accessibilityLabel("activityNameTextField")
+                .padding()
+            TextField("Details", text: $details)
+                .accessibilityLabel("activityDetailsTextField")
+                .padding()
+        }
     }
 }
 
