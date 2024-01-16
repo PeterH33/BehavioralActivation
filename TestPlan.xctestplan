@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "5D659CF6-82B4-4DF8-BABB-EB7D67F2DAC7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BehavioralActivation.xcodeproj",
+        "identifier" : "4C4C3E352B56F533008BA344",
+        "name" : "BehavioralActivationTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BehavioralActivation.xcodeproj",
+        "identifier" : "4C4C3E462B570681008BA344",
+        "name" : "BehavioralActivationUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
