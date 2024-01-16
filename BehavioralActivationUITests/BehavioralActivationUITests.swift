@@ -23,9 +23,13 @@ final class BehavioralActivationUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testNavigationMenuExists(){
+    func testNavigationMenu(){
+        let pickActivityView = app.staticTexts["Pick Activity View"]
+        XCTAssert(pickActivityView.exists)
+        
         let pickActivityNavButton = app.buttons["pickActivityNav"]
         XCTAssert(pickActivityNavButton.exists)
+        
         let createActivityNavButton = app.buttons["createActivityNav"]
         XCTAssert(createActivityNavButton.exists)
     }

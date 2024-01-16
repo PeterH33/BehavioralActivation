@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C21D9FB2B571D0B005B9BF6 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21D9FA2B571D0B005B9BF6 /* MainMenuView.swift */; };
+		4C21D9FD2B572443005B9BF6 /* PickActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21D9FC2B572443005B9BF6 /* PickActivityView.swift */; };
 		4C4C3E252B56F522008BA344 /* BehavioralActivationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C3E242B56F522008BA344 /* BehavioralActivationApp.swift */; };
 		4C4C3E292B56F522008BA344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C3E282B56F522008BA344 /* Assets.xcassets */; };
 		4C4C3E2C2B56F522008BA344 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C3E2B2B56F522008BA344 /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		4C06678E2B570E9E00894089 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 		4C21D9FA2B571D0B005B9BF6 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		4C21D9FC2B572443005B9BF6 /* PickActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickActivityView.swift; sourceTree = "<group>"; };
 		4C4C3E212B56F522008BA344 /* BehavioralActivation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BehavioralActivation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4C3E242B56F522008BA344 /* BehavioralActivationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioralActivationApp.swift; sourceTree = "<group>"; };
 		4C4C3E282B56F522008BA344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				4C4C3E242B56F522008BA344 /* BehavioralActivationApp.swift */,
 				4C21D9FA2B571D0B005B9BF6 /* MainMenuView.swift */,
+				4C21D9FC2B572443005B9BF6 /* PickActivityView.swift */,
 				4C4C3E3F2B56FA84008BA344 /* Activity.swift */,
 				4C4C3E282B56F522008BA344 /* Assets.xcassets */,
 				4C4C3E2A2B56F522008BA344 /* Preview Content */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C21D9FD2B572443005B9BF6 /* PickActivityView.swift in Sources */,
 				4C21D9FB2B571D0B005B9BF6 /* MainMenuView.swift in Sources */,
 				4C4C3E402B56FA84008BA344 /* Activity.swift in Sources */,
 				4C4C3E252B56F522008BA344 /* BehavioralActivationApp.swift in Sources */,

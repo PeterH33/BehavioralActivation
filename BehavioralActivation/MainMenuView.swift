@@ -10,10 +10,17 @@ import SwiftUI
 struct MainMenuView: View {
     var body: some View {
         TabView{
-            Text("Pick Activity View")
+            PickActivityView()
                 .tabItem {
+                    Image(systemName: "list.bullet.clipboard")
                     Text("Pick Activity")
                         .accessibilityIdentifier("pickActivityNav")
+                }
+            Text("Create Activity View")
+                .tabItem {
+                    Image(systemName: "plus.app")
+                    Text("create Activity")
+                        .accessibilityIdentifier("createActivityNav")
                 }
         }
     }
