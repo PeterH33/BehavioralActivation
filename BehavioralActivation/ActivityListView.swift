@@ -11,24 +11,27 @@ import SwiftData
 struct ActivityListView: View {
     @Query private var activities: [Activity]
     
+    @State private var path = [Activity]()
+    
     @Environment(\.modelContext) private var modelContext
     
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $path){
             List{
                 Section("Activities"){
                     ForEach(activities){ activity in
                         Text(activity.title)
+                            .swipeActions(edge: .leading, allowsFullSwipe: true){
+                                Button{
+                                    path.append(activity)
+                                } label: {
+                                    Label("Edit", systemImage: "square.and.pencil")
+                                }
+                                .tint(.yellow)
+                            }
+//                        NavigationLink(activity.title, value: activity)
                     }
                     .onDelete(perform: deleteActivity)
-                    .swipeActions(edge: .leading, allowsFullSwipe: true){
-                        Button{
-                            _ = 1
-                        } label: {
-                            Label("Edit", systemImage: "square.and.pencil")
-                        }
-                        .tint(.yellow)
-                    }
                 }
             }
             

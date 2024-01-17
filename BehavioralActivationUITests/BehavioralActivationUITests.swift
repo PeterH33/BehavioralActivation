@@ -86,6 +86,9 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssert(activityNameTextField.exists)
         XCTAssert(activityDetailTextField.exists)
         
+        //Make sure that the edit menu loaded the item
+        XCTAssertEqual(activityNameTextField.value as! String, "Test Name")
+        XCTAssertEqual(activityDetailTextField.value as! String, "Test Details")
         
         //delete the item from the list
         newDataInList.swipeLeft()
