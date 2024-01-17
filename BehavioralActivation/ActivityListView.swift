@@ -10,6 +10,7 @@ import SwiftData
 
 struct ActivityListView: View {
     @Query private var activities: [Activity]
+    
     @Environment(\.modelContext) private var modelContext
     
     var body: some View {

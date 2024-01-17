@@ -15,13 +15,6 @@ final class BehavioralActivationTests: XCTestCase {
         XCTAssertEqual(newActivity.title, "Test Title")
         XCTAssertEqual(newActivity.detail, "Test Detail")
     }
-    
-    func testDeleteAllActivities() throws{
-        //populate SwiftData with a bunch of dummy data
-        //check its there
-        //delete all the dummydata
-        //make sure its not there
-    }
 
     
 

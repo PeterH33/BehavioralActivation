@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct CreateActivityView: View {
+    
     @State private var title: String = ""
     @State private var details: String = ""
+    
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
         VStack{
             TextField("Name", text: $title)

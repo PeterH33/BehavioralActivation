@@ -11,12 +11,11 @@ final class BehavioralActivationUITests: XCTestCase {
     let app = XCUIApplication()
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // assigns launch arg for use in BehavioralActivationApp.swift init
         app.launchArguments = ["enable-testing"]
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        
         continueAfterFailure = false
         app.launch()
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
@@ -25,24 +24,31 @@ final class BehavioralActivationUITests: XCTestCase {
 
     ///This test is simply to make sure that navigation is working properly
     func testNavigationMenu(){
+        //Make sure that we start on the home page which is the button to pick an activity right now
         let pickActivityButton = app.buttons["pickActivityButton"]
         XCTAssert(pickActivityButton.exists)
         
-        let createActivityButton = app.buttons["createActivityButton"]
-        
+        //Make sure that the tabs for navigation exist
         let pickActivityNavButton = app.buttons["pickActivityNav"]
-        XCTAssert(pickActivityNavButton.exists)
-        
         let activityListNavButton = app.buttons["createActivityNav"]
+        XCTAssert(pickActivityNavButton.exists)
         XCTAssert(activityListNavButton.exists)
         
         //Navigate to the activity list
         activityListNavButton.tap()
+        
+        //make sure that the button for creating an Activity exists and that we do not see the home page any more
+        let createActivityButton = app.buttons["createActivityButton"]
         XCTAssert(createActivityButton.exists)
         XCTAssertFalse(pickActivityButton.exists)
         
+        //Check that list is empty, a section heading counts as a cell
+        XCTAssertEqual(app.cells.count, 1)
+        
         //navigate to the create Activity view from the Activity list view
         createActivityButton.tap()
+        
+        //Check that textfields for Activity Name/Title and Details exist
         let activityNameTextField = app.textFields["activityNameTextField"]
         XCTAssert(activityNameTextField.exists)
         let activityDetailTextField = app.textFields["activityDetailsTextField"]
@@ -63,17 +69,21 @@ final class BehavioralActivationUITests: XCTestCase {
         doneButton.tap()
         XCTAssertFalse(doneButton.waitForExistence(timeout: 0.5))
         
-        //Check that new Activity exists in ActivityListView
-        let newDataInList = app.staticTexts["Test Name"]
+        //Check that a new Activity added exists in ActivityListView
+        XCTAssertEqual(app.cells.count, 2)
+        let newDataInList = app.cells.element(boundBy: 1)
+        //previous version checked by the information displayed in a textfield, just checking that Something was added now
+//        let newDataInList = app.staticTexts["Test Name"]
         XCTAssert(newDataInList.exists)
         
         //delete the item from the list
         newDataInList.swipeLeft()
         let deleteButton = app.buttons["Delete"]
         deleteButton.tap()
+        //make sure the new item is gone
         XCTAssertFalse(newDataInList.exists)
         
-        
+        //Nav back to home page
         pickActivityNavButton.tap()
         XCTAssert(pickActivityButton.exists)
     }
