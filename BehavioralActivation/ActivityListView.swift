@@ -21,6 +21,14 @@ struct ActivityListView: View {
                         Text(activity.title)
                     }
                     .onDelete(perform: deleteActivity)
+                    .swipeActions(edge: .leading, allowsFullSwipe: true){
+                        Button{
+                            _ = 1
+                        } label: {
+                            Label("Edit", systemImage: "square.and.pencil")
+                        }
+                        .tint(.yellow)
+                    }
                 }
             }
             

@@ -50,8 +50,8 @@ final class BehavioralActivationUITests: XCTestCase {
         
         //Check that textfields for Activity Name/Title and Details exist
         let activityNameTextField = app.textFields["activityNameTextField"]
-        XCTAssert(activityNameTextField.exists)
         let activityDetailTextField = app.textFields["activityDetailsTextField"]
+        XCTAssert(activityNameTextField.exists)
         XCTAssert(activityDetailTextField.exists)
         
         //test adding information
@@ -76,11 +76,16 @@ final class BehavioralActivationUITests: XCTestCase {
 //        let newDataInList = app.staticTexts["Test Name"]
         XCTAssert(newDataInList.exists)
         
-        //Edit the item on the list
+        //Check for edit button
         newDataInList.swipeRight()
         let editButton = app.buttons["Edit"]
         XCTAssert(editButton.exists)
+        
+        //Nav to edit Activity
         editButton.tap()
+        XCTAssert(activityNameTextField.exists)
+        XCTAssert(activityDetailTextField.exists)
+        
         
         //delete the item from the list
         newDataInList.swipeLeft()
