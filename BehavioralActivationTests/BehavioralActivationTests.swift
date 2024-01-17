@@ -15,6 +15,10 @@ final class BehavioralActivationTests: XCTestCase {
         XCTAssertEqual(newActivity.title, "Test Title")
         XCTAssertEqual(newActivity.detail, "Test Detail")
     }
+    
+    func testDeleteAllActivities() throws{
+        
+    }
 
     
 

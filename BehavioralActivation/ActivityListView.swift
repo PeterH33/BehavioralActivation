@@ -10,6 +10,7 @@ import SwiftData
 
 struct ActivityListView: View {
     @Query private var activities: [Activity]
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         NavigationStack{
@@ -18,21 +19,30 @@ struct ActivityListView: View {
                     ForEach(activities){ activity in
                         Text(activity.title)
                     }
+                    .onDelete(perform: deleteActivity)
                 }
             }
-                .toolbar{
-                    ToolbarItem{
-                        NavigationLink{
-                            CreateActivityView()
-                        } label: {
-                            Image(systemName: "plus")
-                                .accessibilityLabel("createActivityButton")
-                        }
+            
+            .toolbar{
+                ToolbarItem{
+                    NavigationLink{
+                        CreateActivityView()
+                    } label: {
+                        Image(systemName: "plus")
+                            .accessibilityLabel("createActivityButton")
                     }
                 }
-                .navigationDestination(for: Activity.self) { activity in
-                    CreateActivityView()
-                }
+            }
+            .navigationDestination(for: Activity.self) { activity in
+                CreateActivityView()
+            }
+        }
+    }
+    
+    func deleteActivity(at offsets: IndexSet){
+        for offset in offsets{
+            let activity = activities[offset]
+            modelContext.delete(activity)
         }
     }
 }
