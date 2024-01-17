@@ -37,8 +37,10 @@ struct ActivityListView: View {
             
             .toolbar{
                 ToolbarItem{
-                    NavigationLink{
-                        CreateActivityView()
+                    Button{
+                        let blankActivity = Activity(title: "", detail: "")
+                        modelContext.insert(blankActivity)
+                        path = [blankActivity]
                     } label: {
                         Image(systemName: "plus")
                             .accessibilityLabel("createActivityButton")
@@ -46,7 +48,7 @@ struct ActivityListView: View {
                 }
             }
             .navigationDestination(for: Activity.self) { activity in
-                CreateActivityView()
+                CreateActivityView(activity: activity)
             }
         }
     }

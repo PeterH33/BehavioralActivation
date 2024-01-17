@@ -90,6 +90,10 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssertEqual(activityNameTextField.value as! String, "Test Name")
         XCTAssertEqual(activityDetailTextField.value as! String, "Test Details")
         
+        //back to main menu
+        let backButton = app.buttons["Back"]
+        backButton.tap()
+        
         //delete the item from the list
         newDataInList.swipeLeft()
         let deleteButton = app.buttons["Delete"]
