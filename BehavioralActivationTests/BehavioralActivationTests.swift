@@ -17,7 +17,10 @@ final class BehavioralActivationTests: XCTestCase {
     }
     
     func testDeleteAllActivities() throws{
-        
+        //populate SwiftData with a bunch of dummy data
+        //check its there
+        //delete all the dummydata
+        //make sure its not there
     }
 
     
