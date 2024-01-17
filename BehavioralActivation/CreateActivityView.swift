@@ -20,6 +20,16 @@ struct CreateActivityView: View {
                 .accessibilityLabel("activityDetailsTextField")
                 .padding()
         }
+        .toolbar{
+            ToolbarItem{
+                Button{
+                    
+                } label: {
+                    Text("Done")
+                }
+                .accessibilityLabel("Done")
+            }
+        }
     }
 }
 

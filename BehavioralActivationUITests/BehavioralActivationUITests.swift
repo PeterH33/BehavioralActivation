@@ -61,6 +61,10 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssertEqual(activityDetailTextField.value as! String, "Test Details")
         app.keyboards.buttons["Return"].tap()
         
+        //Submit new activity
+        let doneButton = app.buttons["Done"]
+        XCTAssert(doneButton.exists)
+        
         pickActivityNavButton.tap()
         XCTAssertFalse(createActivityText.exists)
         XCTAssert(pickActivityButton.exists)
