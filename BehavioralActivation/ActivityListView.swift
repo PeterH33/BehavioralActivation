@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ActivityListView: View {
+    @Query private var activities: [Activity]
     
     var body: some View {
         NavigationStack{
-            Text("Create Activity View")
+            List{
+                Section("Activities"){
+                    ForEach(activities){ activity in
+                        Text(activity.title)
+                    }
+                }
+            }
                 .toolbar{
                     ToolbarItem{
                         NavigationLink{

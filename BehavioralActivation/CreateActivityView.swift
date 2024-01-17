@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CreateActivityView: View {
-    @State private var name: String = ""
+    @State private var title: String = ""
     @State private var details: String = ""
     @Environment(\.dismiss) private var dismiss
-    
+    @Environment(\.modelContext) private var modelContext
     var body: some View {
         VStack{
-            TextField("Name", text: $name)
+            TextField("Name", text: $title)
                 .accessibilityLabel("activityNameTextField")
                 .padding()
             TextField("Details", text: $details)
@@ -24,6 +24,7 @@ struct CreateActivityView: View {
         .toolbar{
             ToolbarItem{
                 Button{
+                    modelContext.insert(Activity(title: title, detail: details))
                     dismiss()
                 } label: {
                     Text("Done")

@@ -28,9 +28,6 @@ final class BehavioralActivationUITests: XCTestCase {
         let pickActivityButton = app.buttons["pickActivityButton"]
         XCTAssert(pickActivityButton.exists)
         
-        let createActivityText = app.staticTexts["Create Activity View"]
-        XCTAssertFalse(createActivityText.exists)
-        
         let createActivityButton = app.buttons["createActivityButton"]
         
         let pickActivityNavButton = app.buttons["pickActivityNav"]
@@ -42,7 +39,6 @@ final class BehavioralActivationUITests: XCTestCase {
         //Navigate to the activity list
         activityListNavButton.tap()
         XCTAssert(createActivityButton.exists)
-        XCTAssert(createActivityText.exists)
         XCTAssertFalse(pickActivityButton.exists)
         
         //navigate to the create Activity view from the Activity list view
@@ -67,8 +63,12 @@ final class BehavioralActivationUITests: XCTestCase {
         doneButton.tap()
         XCTAssertFalse(doneButton.waitForExistence(timeout: 0.5))
         
+        //Check that new Activity exists in ActivityListView
+        let newDataInList = app.staticTexts["Test Name"]
+        XCTAssert(newDataInList.exists)
+        
+        
         pickActivityNavButton.tap()
-        XCTAssertFalse(createActivityText.exists)
         XCTAssert(pickActivityButton.exists)
     }
     
