@@ -76,6 +76,12 @@ final class BehavioralActivationUITests: XCTestCase {
 //        let newDataInList = app.staticTexts["Test Name"]
         XCTAssert(newDataInList.exists)
         
+        //Edit the item on the list
+        newDataInList.swipeRight()
+        let editButton = app.buttons["Edit"]
+        XCTAssert(editButton.exists)
+        editButton.tap()
+        
         //delete the item from the list
         newDataInList.swipeLeft()
         let deleteButton = app.buttons["Delete"]
