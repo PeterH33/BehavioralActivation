@@ -64,6 +64,8 @@ final class BehavioralActivationUITests: XCTestCase {
         //Submit new activity
         let doneButton = app.buttons["Done"]
         XCTAssert(doneButton.exists)
+        doneButton.tap()
+        XCTAssertFalse(doneButton.waitForExistence(timeout: 0.5))
         
         pickActivityNavButton.tap()
         XCTAssertFalse(createActivityText.exists)

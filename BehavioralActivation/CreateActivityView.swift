@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateActivityView: View {
     @State private var name: String = ""
     @State private var details: String = ""
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack{
@@ -23,7 +24,7 @@ struct CreateActivityView: View {
         .toolbar{
             ToolbarItem{
                 Button{
-                    
+                    dismiss()
                 } label: {
                     Text("Done")
                 }
