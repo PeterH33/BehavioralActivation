@@ -48,7 +48,7 @@ struct ActivityListView: View {
                 }
             }
             .navigationDestination(for: Activity.self) { activity in
-                CreateActivityView(activity: activity)
+                EditActivityView(activity: activity)
             }
         }
     }

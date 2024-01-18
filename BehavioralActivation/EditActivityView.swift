@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct CreateActivityView: View {
+struct EditActivityView: View {
     
     @Bindable var activity: Activity
     
@@ -61,7 +61,7 @@ struct CreateActivityView: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Activity.self, configurations: config)
         let activity = Activity(title: "Test Title", detail: "Test Detail")
-        return CreateActivityView(activity: activity)
+        return EditActivityView(activity: activity)
             .modelContainer(container)
     } catch {
         return Text("Dailed to create container: \(error.localizedDescription)")

@@ -125,4 +125,7 @@ final class BehavioralActivationUITests: XCTestCase {
         //The Activity that was created should no longer exist, empty count is 1 due to the section header
         XCTAssertEqual(app.cells.count, 1)
     }
+    
+    //Consider adding a cancel button to the Edit activity sheet, and should rename that now
+    
 }
