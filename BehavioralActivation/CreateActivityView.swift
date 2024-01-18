@@ -24,15 +24,34 @@ struct CreateActivityView: View {
                 .accessibilityLabel("activityDetailsTextField")
                 .padding()
         }
+        .navigationBarBackButtonHidden(true)
+        
         .toolbar{
-            ToolbarItem{
+            
+            ToolbarItem(placement: .topBarLeading) {
                 Button{
+                    print("✅Custom back action")
+                    if activity.title.isEmpty{
+                        modelContext.delete(activity)
+                    }
                     dismiss()
                 } label: {
-                    Text("Done")
+                    HStack{
+                        Image(systemName: "chevron.backward")
+                        Text("Back")
+                    }
                 }
-                .accessibilityLabel("Done")
             }
+            
+//            ToolbarItem{
+//                Button{
+//                    dismiss()
+//                } label: {
+//                    Text("Done")
+//                }
+//                .accessibilityLabel("Done")
+//            }
+            
         }
     }
 }

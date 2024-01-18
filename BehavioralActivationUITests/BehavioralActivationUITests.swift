@@ -64,10 +64,10 @@ final class BehavioralActivationUITests: XCTestCase {
         app.keyboards.buttons["Return"].tap()
         
         //Submit new activity
-        let doneButton = app.buttons["Done"]
-        XCTAssert(doneButton.exists)
-        doneButton.tap()
-        XCTAssertFalse(doneButton.waitForExistence(timeout: 0.5))
+        let backButton = app.buttons["Back"]
+        XCTAssert(backButton.exists)
+        backButton.tap()
+        XCTAssertFalse(backButton.waitForExistence(timeout: 0.5))
         
         //Check that a new Activity added exists in ActivityListView
         XCTAssertEqual(app.cells.count, 2)
@@ -91,7 +91,6 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssertEqual(activityDetailTextField.value as! String, "Test Details")
         
         //back to main menu
-        let backButton = app.buttons["Back"]
         backButton.tap()
         
         //delete the item from the list
@@ -106,6 +105,7 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssert(pickActivityButton.exists)
     }
     
+    /// Test whether user creating a new activity and then exiting out of the create activity screen without entering a name deletes the Activity from persistence
     func testAddBlankNameActivityWillNotCreateActivity() throws {
         //go to Activiities list
         let activityListNavButton = app.buttons["createActivityNav"]
