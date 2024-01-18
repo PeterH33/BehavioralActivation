@@ -23,7 +23,7 @@ final class BehavioralActivationUITests: XCTestCase {
     }
 
     ///This test is simply to make sure that navigation is working properly
-    func testNavigationMenu(){
+    func testAddAndDeleteActivity(){
         //Make sure that we start on the home page which is the button to pick an activity right now
         let pickActivityButton = app.buttons["pickActivityButton"]
         XCTAssert(pickActivityButton.exists)
@@ -106,5 +106,23 @@ final class BehavioralActivationUITests: XCTestCase {
         XCTAssert(pickActivityButton.exists)
     }
     
-
+    func testAddBlankNameActivityWillNotCreateActivity() throws {
+        //go to Activiities list
+        let activityListNavButton = app.buttons["createActivityNav"]
+        XCTAssert(activityListNavButton.exists)
+        activityListNavButton.tap()
+        
+        //click create activity
+        let createActivityButton = app.buttons["createActivityButton"]
+        XCTAssert(createActivityButton.exists)
+        createActivityButton.tap()
+        
+        //exit out of create activity without having made any changes, leaving a blank name and description
+        let backButton = app.buttons["Back"]
+        XCTAssert(backButton.exists)
+        backButton.tap()
+        
+        //The Activity that was created should no longer exist, empty count is 1 due to the section header
+        XCTAssertEqual(app.cells.count, 1)
+    }
 }
